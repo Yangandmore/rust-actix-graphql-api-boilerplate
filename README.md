@@ -1,0 +1,1 @@
+rust-actix-graphql-api-boilerplate
