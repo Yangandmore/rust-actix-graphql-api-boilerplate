@@ -1,0 +1,21 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-web = "3.3.2"
+#graphql支持
+async-graphql = "2.8.2"
+#sql支持
+rbatis = "1.8.83"
+#actix与graphql数据映射
+async-graphql-actix-web = "2.8.2"
+#序列化/反序列化
+serde = "1.0"
+#环境文件配置
+dotenv = "0.15.0"
+#静态化/懒性值
+lazy_static = "1.4.0"
