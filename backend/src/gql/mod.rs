@@ -5,6 +5,7 @@ use async_graphql::http::{playground_source, GraphQLPlaygroundConfig};
 use async_graphql_actix_web::{Request, Response};
 use actix_web::{web, HttpResponse};
 use crate::dbs::sql;
+use crate::log::get_logger;
 use crate::gql::queries::QueryRoot;
 use crate::util::constant::{CFG, ENV_GQL_VER};
 
@@ -16,9 +17,11 @@ type ActixSchema = Schema<
 
 pub async fn build_schema() -> ActixSchema {
     let sql = sql().await;
+    let logger = get_logger();
 
     Schema::build(QueryRoot, EmptyMutation, EmptySubscription)
         .data(sql)
+        .data(logger)
         .finish()
 }
 

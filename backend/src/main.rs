@@ -6,7 +6,7 @@ mod dbs;
 mod gql;
 mod models;
 mod util;
-
+mod log;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -15,7 +15,7 @@ async fn main() -> std::io::Result<()> {
 
     println!("{}",
         format!(
-            "{}:{}",
+            "run in {}:{} ==> GO!",
             CFG.get(ENV_ADDRESS).unwrap(),
             CFG.get(ENV_PORT).unwrap())
     );
